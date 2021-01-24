@@ -11,6 +11,7 @@ public class RequestSender implements IRequestSender {
     private final IRequest request;
 
     public RequestSender(IRequest request) {
+        if (request == null) throw new NullPointerException("Передан null вместо запроса");
         this.request = request;
     }
 

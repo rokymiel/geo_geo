@@ -9,7 +9,7 @@ public class Main {
             GeoService geoService = new GeoService(url);
             geoService.getCurrentLocation().ifPresent(System.out::println);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Возникла ошибка во время получения местоположения: " + e.getMessage());
         }
     }
 }

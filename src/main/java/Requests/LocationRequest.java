@@ -15,8 +15,10 @@ public class LocationRequest implements IRequest {
      *
      * @param urlString url запроса
      * @throws MalformedURLException если передан некорректный url
+     * @throws NullPointerException  если передан null вместо url
      */
     public LocationRequest(String urlString) throws MalformedURLException {
+        if (urlString == null) throw new NullPointerException("Передан null вместо url");
         url = new URL(urlString);
     }
 

@@ -13,8 +13,10 @@ public class Parser implements IParser {
      * @param json строковое представление объекта
      * @return объект класса UserLocation.
      * Если была передана некорректная json строка, то возвращается Optional.empty().
+     * @throws NullPointerException если передан null вместо json строки
      */
     public Optional<UserLocation> parse(String json) {
+        if (json == null) throw new NullPointerException("Передан null вместо json строки");
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         try {

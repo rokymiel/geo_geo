@@ -17,8 +17,10 @@ public class GeoService {
      *
      * @param apiURL url запроса
      * @throws MalformedURLException если передан некорректный url
+     * @throws NullPointerException  если передан null вместо url
      */
     public GeoService(String apiURL) throws MalformedURLException {
+        if (apiURL == null) throw new NullPointerException("Передан null вместо");
         locationRequest = new LocationRequest(apiURL);
     }
 
